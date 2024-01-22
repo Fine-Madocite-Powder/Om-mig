@@ -1,3 +1,18 @@
+li.nav {
+    float: left;
+}
+
+li.nav a {
+    display: block;
+    width: 50px;
+    background-color: #000;
+    color: #e41e74;
+}
+li.nav a:hover {
+    background-color:#e41e74;
+    color: #000;
+}
+
 body {
     background-color: lightcyan;
 }
@@ -18,3 +33,6 @@ h2 {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+img {
+    height: 320px;
+}
