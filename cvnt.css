@@ -2,12 +2,15 @@ li.nav {
     float: left;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 li.nav a {
     display: block;
     padding: 20px;
     height: 20px;
-    background-color: #000;
-    color: #e41e74;
     text-align: center;
     text-decoration:line-through;
 }
@@ -17,8 +20,8 @@ li.nav a.on {
 }
 
 li.nav a:hover {
-    background-color:#e41e74;
-    color: #000;
+    background-color:white;
+    color: black;
     text-decoration:none;
 }
 
@@ -27,29 +30,32 @@ ul.nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #000;
+    background-color: black;
 }
 
 body {
-    background-color: lightcyan;
+    background-color: #1b1f21;
 }
 
 h1 {
     text-align: center;
     font-weight: 600;
+    color: #3a3f5e;
 }
 
 h2 {
     text-indent:70px;
     font-weight: 500;
-}
-
-.Machine {
-    color: steelblue;
-    font-family:'Courier New', Courier, monospace;
-    background-color: rgba(255, 255, 255, 0.5);
+    color: #3a3f5e
 }
 
 img {
     height: 320px;
+}
+
+ul {
+    color: #4c6885;
+}
+p {
+    color: #4fa4b8;
 }
