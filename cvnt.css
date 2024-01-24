@@ -4,13 +4,29 @@ li.nav {
 
 li.nav a {
     display: block;
-    width: 50px;
+    padding: 20px;
+    height: 20px;
     background-color: #000;
     color: #e41e74;
+    text-align: center;
+    text-decoration:none;
 }
+
+li.nav a.on {
+    text-decoration: dotted;
+}
+
 li.nav a:hover {
     background-color:#e41e74;
     color: #000;
+}
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
 }
 
 body {
