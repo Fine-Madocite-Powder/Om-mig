@@ -31,10 +31,18 @@ ul.nav {
     padding: 0;
     overflow: hidden;
     background-color: black;
+    z-index: 100;
 }
 
 body {
     background-color: #1b1f21;
+    margin: 0;
+}
+
+canvas {
+    display: block;
+    margin: auto;
+    background-color: #f0f0f0;
 }
 
 h1 {
