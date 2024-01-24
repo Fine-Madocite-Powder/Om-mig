@@ -9,16 +9,17 @@ li.nav a {
     background-color: #000;
     color: #e41e74;
     text-align: center;
-    text-decoration:none;
+    text-decoration:line-through;
 }
 
 li.nav a.on {
-    text-decoration: dotted;
+    text-decoration:none;
 }
 
 li.nav a:hover {
     background-color:#e41e74;
     color: #000;
+    text-decoration:none;
 }
 
 ul.nav {
