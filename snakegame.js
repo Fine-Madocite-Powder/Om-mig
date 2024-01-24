@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 const gridSize = 20;
 
 const snake = [{ x: 10, y: 10}];
-let apples = { x: 15, y: 10};
+let apples = [{ x: 15, y: 10}, {x: 5, y: 10}];
 let direction = 'right';
 
 function drawSnake() {
@@ -42,12 +42,32 @@ function moveSnake() {
 
     for (let i = 0; i < apples.length; i++) {
         const apple = apples[i];
+
         if (head.x === apple.x && head.y === apple.y) {
             snake.push({});
+
+            apples.splice(i,1);
+
             spawnApple();
         }
     }
+    
+    for (let i = 1; i < snake.length; i++) {
+        const body = snake[i];
+        
+        if (head.x === body.x && head.y === body.y) {
+            fail;
+        }
+        
+    }
+
+
+
     snake.pop();
+}
+
+function spawnApple() {
+    apples.push({  x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20)  });
 }
 
 function handleKeyPress (event) {
@@ -72,8 +92,11 @@ function handleKeyPress (event) {
 
 function gameLoop() {
     moveSnake();
+    //ADD MORE OBJECTS AFTER SNAKE
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawSnake(); }
+    drawSnake(); 
+    drawApple();
+}
 
 document.addEventListener("keydown", handleKeyPress);
-setInterval(gameLoop, 100)
+setInterval(gameLoop, 200)
