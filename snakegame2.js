@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 const gridSize = 20;
 
 const snake = [{ x: 10, y: 10}];
-let apples = [{x: 5, y: 10}];
+let apples = [{x: 16, y: 16}, {x: 3, y: 3}, {x: 3, y: 16}];
 let direction = 'right';
 let moving = 'right';
 
