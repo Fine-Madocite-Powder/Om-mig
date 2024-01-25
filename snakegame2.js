@@ -8,12 +8,12 @@ let apples = [{x: 5, y: 10}];
 let direction = 'right';
 let moving = 'right';
 
-let wall = [{ x: -1, y: -1}, {x: -1, y: -1}, {x: -1, y: -1}, {x: -1, y: -1}, {x: -1, y: -1}];
+let wall = [{ x: -1, y: 10}];
 let wallMD = "right";
-let wallMCounter = 3;
+let wallMCounter = 5;
 
 function drawWall() {
-    ctx.fillstyle = "#0F0";
+    ctx.fillStyle = "#0F0";
     wall.forEach(segment => {
         ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
     });
@@ -35,6 +35,49 @@ function drawApple() {
 
 function moveWall() {
 
+    wallMCounter--;
+    if (wallMCounter === 0) {
+        wallMCounter = 4;
+        return;
+    }
+
+    const start = { ...wall[0]};
+    wall.unshift(start);
+
+    switch (wallMD) {
+        case 'up':
+            start.y--;
+            break;
+        case 'down':
+            start.y++
+            break;
+        case 'right':
+            start.x++;
+            break;
+        case 'left':
+            start.x--;
+            break;
+    }
+
+    
+
+    if (start.x === 19 + wall.length || start.y === 19 + wall.length || start.x === 0 - wall.length || start.y === 0 - wall.length) {
+        spawnWall();
+    }
+
+    for (let i = 0; i < apples.length; i++) {
+        const apple = apples[i];
+
+        if (start.x === apple.x && start.y === apple.y) {
+            wall.push({});
+
+            apples.splice(i,1);
+
+            spawnApple();
+        }
+    }
+
+    wall.pop();
 }
 
 function moveSnake() {
@@ -85,6 +128,13 @@ function moveSnake() {
         
     }
 
+    for (let i = 0; i < wall.length; i++) {
+        const segment = wall[i];
+        
+        if (head.x === segment.x && head.y === segment.y) {
+            location.reload();
+        }
+    }
 
 
     snake.pop();
@@ -92,6 +142,35 @@ function moveSnake() {
 
 function spawnApple() {
     apples.push({  x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20)  });
+}
+
+function spawnWall() {
+    const directionIndex = Math.floor(Math.random() * 4);
+    const start = wall[0];
+        
+
+    switch (directionIndex) {
+        case 0:
+            wallMD = 'up';
+            start.y = 20;
+            start.x = Math.floor(Math.random() * 20);
+            break;
+        case 1:
+            wallMD = 'down';
+            start.y = -1;
+            start.x = Math.floor(Math.random() * 20);
+            break;
+        case 2:
+            wallMD = 'left';
+            start.x = 20;
+            start.y = Math.floor(Math.random() * 20);
+            break;
+        case 3:
+            wallMD = 'right';
+            start.x = -1;
+            start.y = Math.floor(Math.random() * 20);
+            break;
+    }
 }
 
 function handleKeyPress (event) {
@@ -119,11 +198,13 @@ function handleKeyPress (event) {
 } }
 
 function gameLoop() {
+    moveWall();
     moveSnake();
     //ADD MORE OBJECTS AFTER SNAKE
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawSnake(); 
     drawApple();
+    drawWall();
 }
 
 document.addEventListener("keydown", handleKeyPress);
