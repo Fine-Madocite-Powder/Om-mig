@@ -51,12 +51,16 @@ function moveSnake() {
             spawnApple();
         }
     }
+
+    if (head.x === -1 || head.x === 20 || head.y === -1 || head.y === 20) {
+        location.reload();
+    }
     
     for (let i = 1; i < snake.length; i++) {
         const body = snake[i];
         
         if (head.x === body.x && head.y === body.y) {
-            fail;
+            location.reload();
         }
         
     }
@@ -74,19 +78,23 @@ function handleKeyPress (event) {
     switch (event.key) {
         case "ArrowUp":
         case "w":
-            direction = "up";
+            if (direction !== "down") {
+            direction = "up"; }
             break;
         case "ArrowDown":
         case "s":
-            direction = "down";
+            if (direction !== "up") {
+            direction = "down"; }
             break;
         case "ArrowLeft":
         case "a":
-            direction = "left";
+            if (direction !== "right") {
+            direction = "left"; }
             break;
         case "ArrowRight":
         case "d":
-            direction = "right";
+            if (direction !== "left") {
+            direction = "right"; }
             break;
 } }
 
