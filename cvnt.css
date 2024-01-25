@@ -34,6 +34,8 @@ ul.nav {
     z-index: 100;
 }
 
+
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -44,40 +46,69 @@ ul.nav {
     position: absolute;
     min-width: 120px;
     padding: 12px 16px;
-    z-index:2;
+    z-index:101;
 }
 
 .dropdown:hover .dropdown-content {
     display:block;
 }
 
-body {
-    background-color: #1b1f21;
+
+/*NEW NAV BAR*/
+
+ul.nav {
+    list-style-type: none;
     margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
 }
 
+.nav li {
+    float: left;
+}
+
+.nav li a, .dropButton {
+    display: inline-block;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    text-decoration:none;
+}
+
+.nav li a:hover, .dropdown:hover .dropButton {
+    color: black;
+    background-color: white;
+}
+
+
+
+/*SNAKE GAME CANVAS*/
 canvas {
     display: block;
     margin: auto;
     background-color: #f0f0f0;
 }
 
+/*COLORS*/
+body {
+    background-color: #1b1f21;
+    margin: 0;
+}
 h1 {
     text-align: center;
     font-weight: 600;
     color: #3a3f5e;
 }
-
 h2 {
     text-indent:70px;
     font-weight: 500;
     color: #3a3f5e
-}
-
+} 
 img {
-    height: 320px;
+    width: 30%;
 }
-
 ul {
     color: #4c6885;
 }
