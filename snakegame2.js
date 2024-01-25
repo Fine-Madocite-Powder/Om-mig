@@ -8,6 +8,17 @@ let apples = [{x: 5, y: 10}];
 let direction = 'right';
 let moving = 'right';
 
+let wall = [{ x: -1, y: -1}, {x: -1, y: -1}, {x: -1, y: -1}, {x: -1, y: -1}, {x: -1, y: -1}];
+let wallMD = "right";
+let wallMCounter = 3;
+
+function drawWall() {
+    ctx.fillstyle = "#0F0";
+    wall.forEach(segment => {
+        ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
+    });
+}
+
 function drawSnake() {
     ctx.fillStyle = "#00F";
     snake.forEach(segment => {
