@@ -153,22 +153,22 @@ function spawnWall() {
         case 0:
             wallMD = 'up';
             start.y = 20;
-            start.x = Math.floor(Math.random() * 20);
+            start.x = apples[Math.floor(Math.random() * apples.length)].x;
             break;
         case 1:
             wallMD = 'down';
             start.y = -1;
-            start.x = Math.floor(Math.random() * 20);
+            start.x = apples[Math.floor(Math.random() * apples.length)].x;
             break;
         case 2:
             wallMD = 'left';
             start.x = 20;
-            start.y = Math.floor(Math.random() * 20);
+            start.y = apples[Math.floor(Math.random() * apples.length)].y;
             break;
         case 3:
             wallMD = 'right';
             start.x = -1;
-            start.y = Math.floor(Math.random() * 20);
+            start.y = apples[Math.floor(Math.random() * apples.length)].y;
             break;
     }
 }
