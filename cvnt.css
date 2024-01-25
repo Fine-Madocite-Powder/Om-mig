@@ -2,12 +2,12 @@ li.nav {
     float: left;
 }
 
-a {
+div {
     color: white;
     text-decoration: none;
 }
 
-li.nav a {
+li.nav div {
     display: block;
     padding: 20px;
     height: 20px;
@@ -15,11 +15,11 @@ li.nav a {
     text-decoration:line-through;
 }
 
-li.nav a.on {
+li.nav div.on {
     text-decoration:none;
 }
 
-li.nav a:hover {
+li.nav div:hover {
     background-color:white;
     color: black;
     text-decoration:none;
