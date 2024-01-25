@@ -6,6 +6,7 @@ const gridSize = 20;
 const snake = [{ x: 10, y: 10}];
 let apples = [{ x: 15, y: 10}, {x: 5, y: 10}];
 let direction = 'right';
+let moving = 'right';
 
 function drawSnake() {
     ctx.fillStyle = "#00F";
@@ -28,15 +29,19 @@ function moveSnake() {
     switch (direction) {
         case 'up': 
             head.y -= 1;
+            moving = 'up';
             break;
         case 'down':
             head.y += 1;
+            moving = 'down';
             break;
         case 'right':
             head.x += 1;
+            moving = 'right';
             break;
         case 'left':
             head.x -= 1;
+            moving = 'left';
             break;
     }
 
@@ -78,22 +83,22 @@ function handleKeyPress (event) {
     switch (event.key) {
         case "ArrowUp":
         case "w":
-            if (direction !== "down") {
+            if (moving !== "down") {
             direction = "up"; }
             break;
         case "ArrowDown":
         case "s":
-            if (direction !== "up") {
+            if (moving !== "up") {
             direction = "down"; }
             break;
         case "ArrowLeft":
         case "a":
-            if (direction !== "right") {
+            if (moving !== "right") {
             direction = "left"; }
             break;
         case "ArrowRight":
         case "d":
-            if (direction !== "left") {
+            if (moving !== "left") {
             direction = "right"; }
             break;
 } }
@@ -107,4 +112,4 @@ function gameLoop() {
 }
 
 document.addEventListener("keydown", handleKeyPress);
-setInterval(gameLoop, 200)
+setInterval(gameLoop, 190);
