@@ -24,6 +24,10 @@ ul.nav {
 .nav li.dropdown {
     display: inline-block;
 }
+.nav li a.on {
+    text-decoration:dashed;
+    color: #4fa4b8;
+}
 
 
 /*The navbar text when hovered, including the dropdown list item*/
