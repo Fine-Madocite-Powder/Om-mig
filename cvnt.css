@@ -6,6 +6,9 @@ ul.nav {
     padding: 0;
     overflow: hidden;
     background-color: black;
+    position: fixed;
+    top: 0px;
+    width: 100%;
 }
 .nav li {
     float: left;
@@ -72,6 +75,11 @@ canvas {
     display: block;
     margin: auto;
     background-color: #f0f0f0;
+}
+
+/*Container preventing title being overlapped by navbar*/
+div.main {
+    margin-top: 80px;
 }
 
 /*COLORS*/
