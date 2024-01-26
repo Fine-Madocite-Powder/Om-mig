@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 const gridSize = 20;
 
 const snake = [{ x: 10, y: 10}];
-let apples = [{x: 16, y: 16}, {x: 3, y: 3}, {x: 3, y: 16}];
+let apples = [{x: 16, y: 16}];
 let direction = 'right';
 let moving = 'right';
 
@@ -35,13 +35,6 @@ function drawApple() {
 }
 
 function moveWall() {
-
-    wallMCounter--;
-    if (wallMCounter === 0) {
-        wallMCounter = 4;
-        return;
-    }
-
     const start = { ...wall[0]};
     wall.unshift(start);
 
@@ -62,8 +55,8 @@ function moveWall() {
 
 
     
-
-    if (start.x === 19 + Math.floor(wall.length / 2) || start.y === 19 + Math.floor(wall.length / 2) || start.x === 0 - Math.floor(wall.length / 2) || start.y === 0 - Math.floor(wall.length / 2)) {
+z
+    if (start.x === 20 || start.y === 20 || start.x === -1 || start.y === -1) {
         spawnWall();
     }
 
@@ -227,5 +220,9 @@ function gameLoop() {
     drawWall();
 }
 
+spawnApple();
+spawnApple();
+spawnApple();
+spawnApple();
 document.addEventListener("keydown", handleKeyPress);
 setInterval(gameLoop, 190);
