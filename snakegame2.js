@@ -11,6 +11,7 @@ let moving = 'right';
 let wall = [{ x: -1, y: 10}];
 let wallMD = "right";
 let wallMCounter = 5;
+let wallCollider = false;
 
 function drawWall() {
     ctx.fillStyle = "#0F0";
@@ -59,9 +60,10 @@ function moveWall() {
             break;
     }
 
+
     
 
-    if (start.x === 19 + wall.length || start.y === 19 + wall.length || start.x === 0 - wall.length || start.y === 0 - wall.length) {
+    if (start.x === 19 + Math.floor(wall.length / 2) || start.y === 19 + Math.floor(wall.length / 2) || start.x === 0 - Math.floor(wall.length / 2) || start.y === 0 - Math.floor(wall.length / 2)) {
         spawnWall();
     }
 
@@ -76,6 +78,16 @@ function moveWall() {
             spawnApple();
         }
     }
+    if (wallCollider && wall.length > 2) {
+        console.log(wall.length);
+    for (let i = 0; i < snake.length; i++) {
+        const segment = snake[i];
+
+        if (start.x === segment.x && start.y === segment.y) {
+            wall.pop();
+            wallCollider = false
+        }
+    }}
 
     wall.pop();
 }
@@ -116,14 +128,20 @@ function moveSnake() {
     }
 
     if (head.x === -1 || head.x === 20 || head.y === -1 || head.y === 20) {
-        location.reload();
+        //location.reload();
+        snake.shift()
+        snake.shift()
+        snake.shift()
     }
     
     for (let i = 1; i < snake.length; i++) {
         const body = snake[i];
         
         if (head.x === body.x && head.y === body.y) {
-            location.reload();
+            //location.reload();
+            snake.shift()
+            snake.shift()
+            snake.shift()
         }
         
     }
@@ -132,7 +150,10 @@ function moveSnake() {
         const segment = wall[i];
         
         if (head.x === segment.x && head.y === segment.y) {
-            location.reload();
+            //location.reload();
+            snake.shift()
+            snake.shift()
+            snake.shift()
         }
     }
 
@@ -147,7 +168,7 @@ function spawnApple() {
 function spawnWall() {
     const directionIndex = Math.floor(Math.random() * 4);
     const start = wall[0];
-        
+    wallCollider = true;
 
     switch (directionIndex) {
         case 0:
