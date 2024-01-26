@@ -1,61 +1,5 @@
-li.nav {
-    float: left;
-}
-
-div {
-    color: white;
-    text-decoration: none;
-}
-
-li.nav div {
-    display: block;
-    padding: 20px;
-    height: 20px;
-    text-align: center;
-    text-decoration:line-through;
-}
-
-li.nav div.on {
-    text-decoration:none;
-}
-
-li.nav div:hover {
-    background-color:white;
-    color: black;
-    text-decoration:none;
-}
-
-ul.nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: black;
-    z-index: 100;
-}
-
-
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 120px;
-    padding: 12px 16px;
-    z-index:101;
-}
-
-.dropdown:hover .dropdown-content {
-    display:block;
-}
-
-
-/*NEW NAV BAR*/
-
+/*------NAV BAR------*/
+/*LIST*/
 ul.nav {
     list-style-type: none;
     margin: 0;
@@ -63,12 +7,12 @@ ul.nav {
     overflow: hidden;
     background-color: black;
 }
-
 .nav li {
     float: left;
 }
 
-.nav li a, .dropButton {
+/*The text inside the navbar, including the dropdown list item*/
+.nav li a, .dropTitle {
     display: inline-block;
     color: white;
     background-color: black;
@@ -76,11 +20,44 @@ ul.nav {
     padding: 20px;
     text-decoration:none;
 }
+/*.nav li a got a block, now the dropdown list item gets it*/
+.nav li.dropdown {
+    display: inline-block;
+}
 
-.nav li a:hover, .dropdown:hover .dropButton {
+
+/*The navbar text when hovered, including the dropdown list item*/
+.nav li a:hover, .dropdown:hover .dropTitle {
     color: black;
     background-color: white;
 }
+
+/*The dropdown menu is not displayed, and is located directly below its drop list item.*/
+div.dropdown-menu {
+    display:none;
+    position:absolute;
+    background-color: black;
+    min-width: 150px;
+    z-index: 1;
+} /*displays dropdown menu */
+.dropdown:hover div.dropdown-menu {
+    display: block;
+}
+
+/*dropdown items get the same treatment as ul li a*/
+div.dropdown-menu a {
+    color: white;
+    background-color: black;
+    padding: 20px;
+    text-decoration: none;
+    display:block;
+}
+
+div.dropdown-menu a:hover {
+    background-color: white;
+    color: black;
+}
+
 
 
 
@@ -107,7 +84,7 @@ h2 {
     color: #3a3f5e
 } 
 img {
-    width: 30%;
+    height: 337px;
 }
 ul {
     color: #4c6885;
