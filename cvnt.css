@@ -24,10 +24,6 @@ ul.nav {
 .nav li.dropdown {
     display: inline-block;
 }
-.nav li a.on {
-    text-decoration:dashed;
-    color: #4fa4b8;
-}
 
 
 /*The navbar text when hovered, including the dropdown list item*/
@@ -37,15 +33,21 @@ ul.nav {
 }
 
 /*The dropdown menu is not displayed, and is located directly below its drop list item.*/
-div.dropdown-menu {
+.dropMenu {
     display:none;
     position:absolute;
     background-color: black;
+    color: pink;
     min-width: 150px;
     z-index: 1;
 } /*displays dropdown menu */
-.dropdown:hover div.dropdown-menu {
+.dropdown:hover div.dropMenu {
     display: block;
+}   
+
+.nav li a.on, .nav li .dropmenu a.on {
+    text-decoration:dashed;
+    color: #4fa4b8;
 }
 
 /*dropdown items get the same treatment as ul li a*/

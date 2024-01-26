@@ -8,7 +8,7 @@ let apples = [{x: 16, y: 16}, {x: 3, y: 3}, {x: 3, y: 16}];
 let direction = 'right';
 let moving = 'right';
 
-let wall = [{ x: -1, y: 10}];
+let wall = [{ x: -1, y: 10}, { x: -1, y: -1}, { x: -1, y: -1}, { x: -1, y: -1} ];
 let wallMD = "right";
 let wallMCounter = 5;
 let wallCollider = false;
@@ -78,8 +78,7 @@ function moveWall() {
             spawnApple();
         }
     }
-    if (wallCollider && wall.length > 2) {
-        console.log(wall.length);
+    if (wallCollider) {
     for (let i = 0; i < snake.length; i++) {
         const segment = snake[i];
 

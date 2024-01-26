@@ -1,9 +1,10 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-const gridSize = 20;
+const gridSize = 30;
+const gridBH = 9;
 
-const snake = [{ x: 10, y: 10}];
+const snake = [{ x: Math.floor(gridBH / 2), y: Math.floor(gridBH / 2)}];
 let apples = [{x: 5, y: 10}];
 let direction = 'right';
 let moving = 'right';
@@ -61,7 +62,8 @@ function moveSnake() {
         }
     }
 
-    if (head.x === -1 || head.x === 20 || head.y === -1 || head.y === 20) {
+    // head.x === {...head.x++} does not work.
+    if (head.x === -1 || head.x === gridBH + 1 || head.y === -1 || head.y === gridBH + 1 ) {
         location.reload();
     }
     
@@ -80,7 +82,7 @@ function moveSnake() {
 }
 
 function spawnApple() {
-    apples.push({  x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20)  });
+    apples.push({  x: Math.floor(Math.random() * 9), y: Math.floor(Math.random() * 9)  });
 }
 
 function handleKeyPress (event) {
@@ -114,6 +116,7 @@ function gameLoop() {
     drawSnake(); 
     drawApple();
 }
-
+apples.shift();
+spawnApple();
 document.addEventListener("keydown", handleKeyPress);
-setInterval(gameLoop, 190);
+setInterval(gameLoop, 200);
