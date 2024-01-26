@@ -1,73 +1,62 @@
-/*------NAV BAR------*/
-/*LIST*/
 ul.nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: black;
-    position: fixed;
-    top: 0px;
-    width: 100%;
+  list-style-type: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #38444d;
 }
+
 .nav li {
-    float: left;
+  float: left;
 }
 
-/*The text inside the navbar, including the dropdown list item*/
-.nav li a, .dropTitle {
-    display: inline-block;
-    color: white;
-    background-color: black;
-    text-align: center;
-    padding: 20px;
-    text-decoration:none;
-}
-/*.nav li a got a block, now the dropdown list item gets it*/
-.nav li.dropdown {
-    display: inline-block;
+#on {
+    color:black;
+    background-color: #4fa4b8;
 }
 
-
-/*The navbar text when hovered, including the dropdown list item*/
-.nav li a:hover, .dropdown:hover .dropTitle {
-    color: black;
-    background-color: white;
+/*The text in the navbar and dropdown*/
+.nav li a, .dropTitle, .dropContainer a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
 }
 
-/*The dropdown menu is not displayed, and is located directly below its drop list item.*/
-.dropMenu {
-    display:none;
-    position:absolute;
-    background-color: black;
-    color: pink;
-    min-width: 150px;
-    z-index: 1;
-} /*displays dropdown menu */
-.dropdown:hover div.dropMenu {
-    display: block;
-}   
-
-.nav li a.on, .nav li .dropmenu a.on {
-    text-decoration:dashed;
-    color: #4fa4b8;
+.nav a:hover, .dropdown:hover .dropTitle {
+  background-color: #4fa4b8;
+  color: black;
 }
 
-/*dropdown items get the same treatment as ul li a*/
-div.dropdown-menu a {
-    color: white;
-    background-color: black;
-    padding: 20px;
-    text-decoration: none;
-    display:block;
+.nav li.dropLI {
+  display: inline-block;
 }
 
-div.dropdown-menu a:hover {
-    background-color: white;
-    color: black;
+.dropContainer {
+  display: none;
+  position: fixed;
+  background-color: black;
+  min-width: 160px;
+  z-index: 100;
 }
 
+.dropContainer a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
 
+.dropContainer a:hover {background-color: #f1f1f1;}
+
+.dropLI:hover .dropContainer {
+  display: block;
+}
 
 
 /*SNAKE GAME CANVAS*/

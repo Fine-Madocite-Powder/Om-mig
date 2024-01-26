@@ -55,7 +55,7 @@ function moveWall() {
 
 
     
-z
+
     if (start.x === 20 || start.y === 20 || start.x === -1 || start.y === -1) {
         spawnWall();
     }
@@ -87,6 +87,7 @@ z
 function moveSnake() {
     const head = { ...snake[0] };
     snake.unshift(head);
+    console.log(`x: ${snake[0].x}, y: ${snake[0].y}`);
 
     switch (direction) {
         case 'up': 
