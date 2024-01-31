@@ -65,18 +65,19 @@ canvas {
     margin: auto;
     background-color: #f0f0f0;
 }
-a {
-    text-decoration:none;
-}
+
 /*Container preventing title being overlapped by navbar*/
 div.main {
     margin-top: 80px;
 }
 
-/*COLORS*/
+/*BASICS*/
 body {
     background-color: #1b1f21;
     margin: 0;
+}
+a {
+    text-decoration:none;
 }
 h1 {
     text-align: center;
@@ -88,6 +89,10 @@ h2 {
     font-weight: 500;
     color: #3a3f5e
 } 
+img.background {
+  z-index: -1;
+  width: 100%;
+}
 img.unchanged {
     height: 337px;
 }
