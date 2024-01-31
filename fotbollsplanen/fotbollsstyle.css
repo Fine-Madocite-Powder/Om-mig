@@ -25,25 +25,24 @@
     font-size: 20px;
     font-weight: bold;
     font-family: Consolas, sans-serif;
-  }
-
-  .red {
-    background-color: red;
-  }
-  .blue {
-    background-attachment: blue;
-  }
+    color: whitesmoke;
+}
   /* 
     Skriv klasser för att placera ut spelarna nedan. 
     Se exemplet som placerar ut målvakt och försvarare.
   */
   .goalie {
-    top: 320px;
-    left: 10px;
+    top: 50%;
+    left: 5%;
   }
   
   .defender {
-    left: 149px;
+    left: 15%;
+    bottom: 10%;
+  }
+
+  .wowenthusiast {
+    left: 30%
   }
   
   .left-wing {
