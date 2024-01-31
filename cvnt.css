@@ -65,7 +65,9 @@ canvas {
     margin: auto;
     background-color: #f0f0f0;
 }
-
+a {
+    text-decoration:none;
+}
 /*Container preventing title being overlapped by navbar*/
 div.main {
     margin-top: 80px;

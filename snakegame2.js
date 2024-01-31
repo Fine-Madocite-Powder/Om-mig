@@ -13,6 +13,8 @@ let wallMD = "right";
 let wallMCounter = 5;
 let wallCollider = false;
 
+let points = 0;
+
 function drawWall() {
     ctx.fillStyle = "#0F0";
     wall.forEach(segment => {
@@ -35,6 +37,13 @@ function drawApple() {
 }
 
 function moveWall() {
+
+    if (wallMCounter === 0) {
+        wallMCounter = 2;
+        return;
+    }
+    wallMCounter--;
+
     const start = { ...wall[0]};
     wall.unshift(start);
 
@@ -87,7 +96,6 @@ function moveWall() {
 function moveSnake() {
     const head = { ...snake[0] };
     snake.unshift(head);
-    console.log(`x: ${snake[0].x}, y: ${snake[0].y}`);
 
     switch (direction) {
         case 'up': 
@@ -113,6 +121,8 @@ function moveSnake() {
 
         if (head.x === apple.x && head.y === apple.y) {
             snake.push({});
+
+            points++;
 
             apples.splice(i,1);
 
@@ -219,10 +229,13 @@ function gameLoop() {
     drawSnake(); 
     drawApple();
     drawWall();
+
+    if (snake.length < 1) {
+        alert(`You have earned ${points} points. Unfortunately, you also died :P\nGotta find a better way to sent this massage...`);
+        location.reload();
+    }
 }
 
-spawnApple();
-spawnApple();
 spawnApple();
 spawnApple();
 document.addEventListener("keydown", handleKeyPress);
