@@ -38,13 +38,16 @@
   
   .defender {
     left: 15%;
+  }
+  
+  .mright {
+    bottom: 35%;
+  }
+
+  .right-wing {
     bottom: 10%;
   }
 
-  .wowenthusiast {
-    left: 30%
-  }
-  
   .left-wing {
-    top: 100px;
+    top: 10%;
   }
