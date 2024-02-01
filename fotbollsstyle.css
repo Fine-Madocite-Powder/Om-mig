@@ -4,11 +4,10 @@ div:ar som är spelare. Div.
 */
 .field-wrapper {
   position: sticky;
-  width: 100%;
-  
+  width: 70%;
+  height:auto;
   top: 0;
 }
-
 /*
   Den här klassen sätter storleken på bilden av fotbollsplanen. Bild.
 */
@@ -17,9 +16,6 @@ div:ar som är spelare. Div.
   height: auto;
   z-index: 0;
 }
-
-
-
 /*
   Den här klassen beskriver hur spelare ser ut, men positionerar dem inte.
 */
@@ -37,34 +33,26 @@ div:ar som är spelare. Div.
 }
 
 
-
-
 /* Individuell placering av spelarna */
 .goalie {
   top: 50%;
   left: 5%;
 }
-
 .defender {
   left: 20%;
 }
-
 .offense {
   left: 40%;
 }
-
 .mright {
   bottom: 35%;
 }
-
 .mleft {
   top: 35%;
 }
-
 .right-wing {
   bottom: 13%;
 }
-
 .left-wing {
   top: 13%;
 }
