@@ -114,8 +114,12 @@ body {
     background-color: #1b1f21;
     margin: 0;
 }
+.highlight {
+  color:#92e8c0;
+}
 a {
     text-decoration:none;
+    color: #92e8c0;
 }
 h1 {
     text-align: center;
