@@ -1,3 +1,17 @@
+/*@font-face {
+  font-family: 'blackchancery';
+  src: url('Fonts/SansationLight/SansationLight.eot');
+  src: url('Fonts/SansationLight/SansationLight.eot?#iefix') format('embedded-opentype'),
+       url('Fonts/SansationLight/SansationLight.woff') format('woff'),
+       url('Fonts/SansationLight/SansationLight.ttf') format('truetype'),
+       url('Fonts/SansationLight/SansationLight.svg#SansationLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+
+  Was gonna do this. Will see if it leads anywhere.
+}*/
+
 ul.nav {
   list-style-type: none;
   position: fixed;
@@ -58,6 +72,29 @@ ul.nav {
 .dropLI:hover .dropContainer {
   display: block;
 }
+
+/* HOVER BOXES*/
+
+.dropboxparent {
+  text-decoration: none;
+}
+
+.dropbox {
+  position:fixed;
+  width: 200px;
+  transform:translate(0, -40px);
+  font-size: 20px;
+  font-weight: bold;
+  background-color: whitesmoke;
+  display:none;
+  border-radius: 15px;
+}
+
+.dropboxparent:hover .dropbox {
+  display: block;
+  font-size: 15px;
+}
+
 
 
 /*SNAKE GAME CANVAS*/
@@ -120,7 +157,7 @@ div:ar som är spelare. Div.
 .field-wrapper {
   position: sticky;
   width: 55%;
-  z-index: -1;
+  z-index: 1;
   height:auto;
   top: 60px;
 }
@@ -142,11 +179,15 @@ div:ar som är spelare. Div.
   text-align: center;
   font-size: 20px;
   font-weight: bold;
-  font-family: Consolas, sans-serif;
+  font-family: blackchancery;
   background-color: whitesmoke;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
+.player:hover {
+  z-index: 10;
+}
 
 /* Individuell placering av spelarna */
 .goalie {
