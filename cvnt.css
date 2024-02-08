@@ -11,7 +11,14 @@
 
   Was gonna do this. Will see if it leads anywhere.
 }*/
-
+#playerfield {
+  z-index: 1000;
+  transform:translate(0,-100%);
+  position: sticky;
+  width: 55vw;
+  height: 40vw;
+  top: calc(40vw + 60px);
+}
 ul.nav {
   list-style-type: none;
   position: fixed;
@@ -81,18 +88,20 @@ ul.nav {
 
 .dropbox {
   position:fixed;
-  width: 300px;
-  transform:translate(0, -40px);
-  font-size: 20px;
-  font-weight: bold;
-  background-color: whitesmoke;
+  width:300px;
+  transform:translate(0,-40px);
+  font-size:20px;
+  font-weight:bold;
+  background-color:black;
+  color:gold;
   display:none;
-  border-radius: 15px;
+  border-radius:15px;
 }
 
 .dropboxparent:hover .dropbox {
   display: block;
   font-size: 15px;
+  z-index: 1000;
 }
 
 
@@ -122,6 +131,9 @@ a {
     text-decoration:none;
     color: #92e8c0;
 }
+a:hover {
+  text-decoration:underline;
+}
 h1 {
     text-align: center;
     font-weight: 600;
@@ -141,13 +153,22 @@ ul {
 }
 p {
     color: #4fa4b8;
+    margin-left:1%;
 }
 .rightdiv {
   position: relative;
   width: 70%;
   left: 30%;
+  border-radius:20px;
   z-index: 5;
-  background-color: whitesmoke;
+  background-color: black;
+}
+.rightdiv p {
+  color:crimson;
+}
+.OBS {
+  color:crimson;
+  background-color: black;
 }
 
 /* 3 bilder: Två som omsluter en tredje, som har rundade kanter */
@@ -189,19 +210,19 @@ p {
 Den här klassen innehåller bilden på fortbollsplanen samt alla
 div:ar som är spelare. Div.
 */
-.field-wrapper {
+#battlefield {
   position: sticky;
-  width: 55%;
-  z-index: 1;
-  height: auto;
+  width: 55vw;
+  height: 40vw;
   top: 60px;
 }
 /*
   Den här klassen sätter storleken på bilden av fotbollsplanen. Bild.
 */
-.football-field {
+.orbitalstation {
   width: 100%;
   height: auto;
+  z-index: -1;
 }
 /*
   Den här klassen beskriver hur spelare ser ut, men positionerar dem inte.
@@ -215,13 +236,14 @@ div:ar som är spelare. Div.
   font-size: 20px;
   font-weight: bold;
   /*font-family: blackchancery;*/
-  background-color: whitesmoke;
+  background-color: black;
+  color: gold;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 1000;
 }
 
 .player:hover {
-  z-index: 10;
+  z-index: 1000;
 }
 
 /* Individuell placering av spelarna */
