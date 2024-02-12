@@ -12,7 +12,7 @@
   Was gonna do this. Will see if it leads anywhere.
 }*/
 #playerfield {
-  z-index: 1000;
+  z-index: 500;
   transform:translate(0,-100%);
   position: sticky;
   width: 55vw;
@@ -28,7 +28,7 @@ ul.nav {
   padding: 0;
   overflow: hidden;
   background-color: #38444d;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .nav li {

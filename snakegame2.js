@@ -230,10 +230,9 @@ function gameLoop() {
     drawApple();
     drawWall();
 
-    if (snake.length < 1) {
-        //alert(`You have earned ${points} points. Unfortunately, you also died :P\nGotta find a better way to sent this massage...`);
-        window.open("file:///C:/Users/Elev/OneDrive/Desktop/Stuff to learn/Things in the thinking/Om Mig/Om-mig/GAMES.html","_self");
-        console.log("Does this code execute?");
+    if (snake.length < 2) {
+        alert(`You have earned ${points} points. Unfortunately, you also died :P\nGotta find a better way to sent this massage...`);
+        window.open("GAMES.html","_self");
     }
 }
 

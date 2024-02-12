@@ -65,7 +65,7 @@ function moveSnake() {
     // head.x === {...head.x++} does not work.
     if (head.x === -1 || head.x === gridBH + 1 || head.y === -1 || head.y === gridBH + 1 ) {
         alert(`You have earned ${snake.length - 1} points. Unfortunately, you also died :P\nGotta find a better way to sent this massage...`);
-        location.reload();
+        window.open("GAMES.html","_self");
     }
     
     for (let i = 1; i < snake.length; i++) {
@@ -73,7 +73,7 @@ function moveSnake() {
         
         if (head.x === body.x && head.y === body.y) {
             alert(`You have earned ${snake.length - 1} points. Unfortunately, you also died :P\nGotta find a better way to sent this massage...`);
-            location.reload();
+            window.open("GAMES.html","_self");
         }
         
     }
