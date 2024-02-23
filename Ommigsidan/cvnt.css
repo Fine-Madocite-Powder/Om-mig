@@ -86,10 +86,20 @@ ul.nav {
   text-decoration: none;
 }
 
+@keyframes grow {
+  50% {width:60px; line-height: 60px }
+  100% { width: 40px; line-height: 40px }
+}
+
+.dropboxparent:hover {
+  animation-name: grow;
+  animation-duration: 1s;
+}
+
 .dropbox {
   position:fixed;
   width:300px;
-  transform:translate(0,-40px);
+  transform:translate(0,-50%);
   font-size:20px;
   font-weight:bold;
   background-color:black;
@@ -166,6 +176,7 @@ p {
 .rightdiv p {
   color:crimson;
 }
+
 .OBS {
   color:crimson;
   background-color: black;

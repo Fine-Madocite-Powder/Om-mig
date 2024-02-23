@@ -230,8 +230,8 @@ function gameLoop() {
     drawApple();
     drawWall();
 
-    if (snake.length < 2) {
-        alert(`You have earned ${points} points. Unfortunately, you also died :P\nGotta find a better way to sent this massage...`);
+    if (snake.length < 1) {
+        //alert(`You have earned ${points} points. Unfortunately, you also died :P\nGotta find a better way to sent this massage...`);
         window.open("GAMES.html","_self");
     }
 }
